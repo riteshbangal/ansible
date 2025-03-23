@@ -1,0 +1,9 @@
+---
+- name: Check Apache service status
+  service_facts:
+
+- name: Start Apache if stopped
+  service:
+    name: apache2
+    state: started
+  when: ansible_facts.services['apache2'].state == 'stopped'

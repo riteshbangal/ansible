@@ -1,0 +1,21 @@
+---
+- hosts: vms
+  tasks:
+    - name: Ensure Apache is installed
+      apt:
+        name: apache2
+        state: present
+      become: yes
+
+    - name: Ensure Apache is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+      become: yes
+
+    - name: Create a test HTML file
+      copy:
+        content: "<h1>Hello, Ansible!</h1>"
+        dest: /var/www/html/index.html
+      become: yes
