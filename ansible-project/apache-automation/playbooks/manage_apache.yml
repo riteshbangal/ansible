@@ -4,5 +4,5 @@
   # become: yes
   roles:
     # - setup_apache
-    # - check_apache_status_start
-    - check_apache_status_stop
+    - check_apache_status_start
+    # - check_apache_status_stop
