@@ -1,8 +1,8 @@
 ---
 - name: Manage Apache Server
   hosts: all
-  become: yes
+  # become: yes
   roles:
-    - setup_apache
-    - check_apache_status_start
+    # - setup_apache
+    # - check_apache_status_start
     - check_apache_status_stop
