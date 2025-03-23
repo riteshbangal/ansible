@@ -1,10 +1,9 @@
 
 http://localhost:8080/ -->
  kubectl get secret awx-demo-admin-password -o jsonpath="{.data.password}" | base64 --decode
-eT58G0SYIiEr6p0lHkoQsLipVQykZZiB%
 
 export AWX_ADMIN_PASSWORD=$(kubectl get secret awx-demo-admin-password -n awx -o jsonpath="{.data.password}" | base64 --decode)
-curl -v -u admin:eT58G0SYIiEr6p0lHkoQsLipVQykZZiB% http://localhost:8080/api/v2/
+curl -v -u admin:<pass> http://localhost:8080/api/v2/
 ----------------------------------
 
 Basic Authentication (Username & Password)
@@ -110,7 +109,7 @@ curl 'http://localhost:8080/api/v2/credentials/' \
   -H 'sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"' \
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "macOS"' \
-  --data-raw '{"inputs":{"username":"ubuntu","password":"","ssh_key_data":"-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn\nNhAAAAAwEAAQAAAQEAz2nyMZfKuBe1rPUOFB6qki5IX2cCFq7R/fOZIuCy0ltAl+Stowg1\nzGJ0Opf+hBM3/6NfmLbGHBfqwy/nDvvWfHbpAZK2p2NhEpZs9yd2W/CiqGzNOATYWdSqgV\nXEvuVzq8pGBnVabM4cdn3ACgu+tvRYuM3Xv5wOgDtNrktSOq+iqHLcizwKt3Abt7TxLZqQ\n84QOiF4Q6XhVaBPnXhgdECGuE6+Xw16oFEzQIt79m7ta3GT5QJeSFtjQRm8n6fxg0SI09H\nY8++g1FQdmXT7AdOGSrpd/EEEQCGereVMiqZJHHNPP3TOYpoIqh/cGlMkLa8X4CLZHEf6J\nnElQ3RzLnwAAA9gNJK1wDSStcAAAAAdzc2gtcnNhAAABAQDPafIxl8q4F7Ws9Q4UHqqSLk\nhfZwIWrtH985ki4LLSW0CX5K2jCDXMYnQ6l/6EEzf/o1+YtsYcF+rDL+cO+9Z8dukBkran\nY2ESlmz3J3Zb8KKobM04BNhZ1KqBVcS+5XOrykYGdVpszhx2fcAKC7629Fi4zde/nA6AO0\n2uS1I6r6KoctyLPAq3cBu3tPEtmpDzhA6IXhDpeFVoE+deGB0QIa4Tr5fDXqgUTNAi3v2b\nu1rcZPlAl5IW2NBGbyfp/GDRIjT0djz76DUVB2ZdPsB04ZKul38QQRAIZ6t5UyKpkkcc08\n/dM5imgiqH9waUyQtrxfgItkcR/omcSVDdHMufAAAAAwEAAQAAAQBU81WpDjyPLdbRIgVE\nJFNEUASAXpYyaCPF2XHNIS7cjVdlXtnnPkOalHB6Vyp9OcnjwCw1RhbaBsm2a/Y84tS0YZ\neJd2esIz3s+QNkLxuBCIv2Y6mh2goqsLmtA03zydKYd946YvJIQhrSRSrUcn8IPAfimRxW\ndDpUNvXX/y2MrwljbV9CvjKN17k0HNVn/MqdBlohxvUL5vw90XPxemIsByqC4RNq3LDKnK\nj/rsIC/oOWGW3spNtBjextguVjSUPYY4uh6Jbyu8OnyrcRf4BIp4IWSczSMcLK8I+isIUZ\n3LkUvZqEiU46SFgxxRlO78ZObT59X0+oHIadjys5jCIRAAAAgBVAZDPQltvFvytadDtGam\n8FTJYdN3FYmn8yqPPSSXBHPu4hTlCfwxAJdEFS3OPBFq2QO/Ktk2ZD8+z32ZT823JEdqPF\nySNOzQynOzO461uGn20H2Bm/YmnZpPDlup2DzUwIw4PRpgzuXpG+BWUBzTj64PUXa/Trun\negV5IMqPfvAAAAgQD82/0MsQvscFsBDzJenLT+cpV8XZIyntR7SC1sHS3irPHbNfR4YjY9\nMYqxXh6cRsYX2Tvrh46Bfn51dUHcoAEKCofsRUS8sLtn0LenC8y6GmTPQGwkdkKRhP+CBE\nq0CZVgqyherSprj5xa6nFENkE+My2WixakVEAzIdy7BEabowAAAIEA0f10n2u7chwuWVHf\neGgrr0n4BVt7v0mDq/6eOq1es2lpVBOyZxTbx3YdW45Vghq35K7DxHACrQC3w17LCEc6lF\noS9/dGK3m1z5Q/413407V+gt1k8tX6Zx8GBIkxe43K28lUeBdfxHgibOwd1KRylC+nTrcn\niEVrVlzq90+yT9UAAAAfcml0ZXNoY2hhbmRyYWJhbmdhbEBSaXRlc2hzLU1CUAECAwQ=\n-----END OPENSSH PRIVATE KEY-----","ssh_public_key_data":"","ssh_key_unlock":"","become_method":"","become_username":"","become_password":""},"name":"my-vms-ssh","description":"SSH key-based access to my-vms","isOrgLookupDisabled":false,"credential_type":1,"organization":1}'
+  --data-raw '{"inputs":{"username":"ubuntu","password":"","ssh_key_data":"-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn\nNhAAAAAwEAAQAAAQEAz2nyMZfKuBe1rPUOFB6qki5IX2cCFq7R/fOZIuCy0ltAl+Stowg1\nzGJ0Opf+hBM3/6NfmLbGHBfqwy/nDvvWfHbpAZK2p2NhEpZs9yd2W/CiqGzNOATYWdSqgV\nXEvuVzq8pGBnVabM4cdn3ACgu+tvRYuM3Xv5wOgDtNrktSOq+iqHLcizwKt3Abt7TxLZqQ\n84QOiF4Q6XhVaBPnXhgdECGuE6+Xw16oFEzQIt79m7ta3GT5QJeSFtjQRm8n6fxg0SI09H\nY8++g1FQdmXT7AdOGSrpd/EEEQ................coAEKCofsRUS8sLtn0LenC8y6GmTPQGwkdkKRhP+CBE\nq0CZVgqyherSprj5xa6nFENkE+My2WixakVEAzIdy7BEabowAAAIEA0f10n2u7chwuWVHf\neGgrr0n4BVt7v0mDq/6eOq1es2lpVBOyZxTbx3YdW45Vghq35K7DxHACrQC3w17LCEc6lF\noS9/dGK3m1z5Q/413407V+gt1k8tX6Zx8GBIkxe43K28lUeBdfxHgibOwd1KRylC+nTrcn\niEVrVlzq90+yT9UAAAAfcml0ZXNoY2hhbmRyYWJhbmdhbEBSaXRlc2hzLU1CUAECAwQ=\n-----END OPENSSH PRIVATE KEY-----","ssh_public_key_data":"","ssh_key_unlock":"","become_method":"","become_username":"","become_password":""},"name":"my-vms-ssh","description":"SSH key-based access to my-vms","isOrgLookupDisabled":false,"credential_type":1,"organization":1}'
 
 
 
@@ -176,7 +175,7 @@ curl -X GET -H "Authorization: Bearer $AWX_TOKEN" \
 
 
 Launch the Job Template
-curl -X POST -H "Authorization: Bearer $AWX_TOKEN" \
+curl -v -X POST -H "Authorization: Bearer $AWX_TOKEN" \
     http://localhost:8080/api/v2/job_templates/9/launch/ | jq .
 
 
